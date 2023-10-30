@@ -1,11 +1,24 @@
-function ToDo() {
+import { useState } from "react";
+function handleChange (event) {
+    setKakis(event.target.checked);
+}
+
+function ToDo(props) {
+
+    const [kakis, setKakis] = useState(props.completed);
+
 return(
     <>
-    <p>UserId: 1</p>
-    <p>id: 1</p>
-    <p>title: "delectus aut autem"</p>
-    <p>completed: false</p>
+    <p>UserId: {props.userId}</p>
+    <p>id: {props.id}</p>
+    <p>{props.title}</p>
+
+    
+    <input type="checkbox" 
+    checked={kakis}
+    onChange={handleChange}>
+    </input>
     </>
-)
+);
     }
     export default ToDo;

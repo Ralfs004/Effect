@@ -12,7 +12,13 @@ function App() {
   return (
     <div className="App">
  
-  <ToDo />
+  <ToDo {...toDo} />
+  <ToDo
+  UserId={toDo.UserId}
+  id={toDo.id}
+  title={toDo.title}
+  completed={toDo.completed}
+  />
   
     </div>
   );
