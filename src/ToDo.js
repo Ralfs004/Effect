@@ -1,12 +1,14 @@
 import { useState } from "react";
-function handleChange (event) {
-    setKakis(event.target.checked);
-}
+
 
 function ToDo(props) {
 
     const [kakis, setKakis] = useState(props.completed);
 
+    function handleChange (event) {
+        setKakis(event.target.checked);
+    }
+    
 return(
     <>
     <p>UserId: {props.userId}</p>
