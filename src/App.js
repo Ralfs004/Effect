@@ -1,4 +1,5 @@
-import ToDo from "./ToDo.js"
+import ToDo from "./ToDo"
+import comment from "./Comment"
 import {useEffect, useState} from "react";
 
 
@@ -6,7 +7,7 @@ import {useEffect, useState} from "react";
 function App() {
 
 const [toDo, setToDo] = useState ({});
-
+const [loading, setLoading] = useState(true);
 useEffect(() => {
 
   getToDo();
@@ -17,13 +18,15 @@ useEffect(() => {
     const data = await response.json();
 
     setToDo(data);
-
+    setLoading(false);
 }
 }, []);
 
-
   return (
-    <ToDo {...toDo}/>
+    <>
+    {loading ? <p>loading...</p> : <ToDo {...toDo}/>}
+    <Comment />
+    </>
   );
 }
 

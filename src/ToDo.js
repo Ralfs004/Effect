@@ -15,7 +15,6 @@ return(
     <p>id: {props.id}</p>
     <p>{props.title}</p>
 
-    
     <input type="checkbox" 
     checked={kakis}
     onChange={handleChange}>
